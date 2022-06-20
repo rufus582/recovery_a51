@@ -2,7 +2,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # Include any options that can't be included in BoardConfig.mk
-$(call inherit-product, device/samsung/a51/device.mk)
+$(call inherit-product, device/samsung/m31s/device.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_RELEASE_NAME := m31s
