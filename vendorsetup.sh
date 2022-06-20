@@ -17,7 +17,7 @@
 #
 # 	Please maintain this if you use this script or any part of it
 #
-FDEVICE1="a51"
+FDEVICE1="m31s"
 
 RED_BACK="\e[101m"
 RED="\e[91m"
@@ -25,7 +25,7 @@ RESET="\e[0m"
 GREEN="\e[92m"
 
 export_build_vars(){
-	echo -e "${GREEN}Exporting build vars from the a51 tree${RESET}"
+	echo -e "${GREEN}Exporting build vars from the device tree${RESET}"
 	export ALLOW_MISSING_DEPENDENCIES=true
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
 	export LC_ALL="C"
@@ -33,9 +33,8 @@ export_build_vars(){
 	export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/by-name/recovery"
 	# Skip the selinux enforce patches for a samsung device.
 	export OF_NO_SAMSUNG_SPECIAL=1
-	# Same as setting TW_USE_SAMSUNG_HAPTICS
-	# to true in makefile.
-	#export OF_USE_SAMSUNG_HAPTICS=1
+	
+	export OF_MAINTAINER="RufusIR"
 
 	# Only set this to 1, 2 or 3.
 	# Incase you don't wanna use it,
@@ -53,7 +52,7 @@ export_build_vars(){
 	export OF_ALLOW_DISABLE_NAVBAR=0
 	export OF_USE_SYSTEM_FINGERPRINT=1
 	export OF_USE_TWRP_SAR_DETECT=1
-	export OF_QUICK_BACKUP_LIST="/super;/boot;/vbmeta;/vbmeta_samsung;/dtbo;/efs;/sec_efs;/modem"
+	export OF_QUICK_BACKUP_LIST="/super;/data;/boot;/vbmeta;/vbmeta_samsung;/dtbo;/efs;/sec_efs;/modem"
 	export FOX_ENABLE_APP_MANAGER=1
 	export OF_STATUS_INDENT_LEFT="48"
 	export OF_STATUS_INDENT_RIGHT="48"
@@ -67,8 +66,8 @@ export_build_vars(){
 	export OF_DONT_KEEP_LOG_HISTORY=1
 	export OF_IGNORE_LOGICAL_MOUNT_ERRORS=1
 
-	export TARGET_DEVICE_ALT="a51, a51ns, a51nsxx"
-	export OF_TARGET_DEVICES="a51, a51ns, a51nsxx"
+	export TARGET_DEVICE_ALT="m31s"
+	export OF_TARGET_DEVICES="m31s"
 
 	if [ "$FOX_CUSTOM_BINS_TO_SDCARD" != "" ]; then
 		export FOX_USE_NANO_EDITOR=1
@@ -85,14 +84,14 @@ export_build_vars(){
 	# R11
 	export FOX_R11=1
 	export FOX_BUILD_TYPE=Stable
-	export FOX_VERSION="R11.1_3"
+	export FOX_VERSION="10_m31s"
 
 	# maximum permissible splash image size
 	# (in kilobytes); do *NOT* increase!
 	export OF_SPLASH_MAX_SIZE=104
 
 	# Custom pic for maintainer's about section info
-	export OF_MAINTAINER_AVATAR="$PWD/device/samsung/a51/maintainer.png"
+	export OF_MAINTAINER_AVATAR="$PWD/device/samsung/m31s/maintainer.png"
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then

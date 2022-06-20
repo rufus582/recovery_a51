@@ -5,9 +5,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, device/samsung/a51/device.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_RELEASE_NAME := a51
-PRODUCT_NAME := omni_a51
-PRODUCT_DEVICE := a51
-PRODUCT_MODEL := SM-A515F
+PRODUCT_RELEASE_NAME := m31s
+PRODUCT_NAME := omni_m31s
+PRODUCT_DEVICE := m31s
+PRODUCT_MODEL := SM-M317F
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung

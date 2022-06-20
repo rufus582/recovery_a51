@@ -44,6 +44,18 @@
 /vbmeta_system  emmc    /dev/block/by-name/vbmeta               flags=display="Vbmeta System";backup=1;flashimg=1;
 /vbmeta_samsung emmc    /dev/block/by-name/vbmeta_samsung       flags=display="Vbmeta Samsung";backup=1;flashimg=1;
 
+# Logical partitions
+system			/system		ext4									wait,logical,first_stage_mount
+vendor			/vendor		ext4									wait,logical,first_stage_mount
+product			/product	ext4									wait,logical,first_stage_mount
+odm				/odm		ext4									wait,logical,first_stage_mount
+
+# Symlinked partitions
+/system_image	emmc		/dev/block/bootdevice/by-name/system			flags=backup=0;flashimg;display="System Image"
+/vendor_image	emmc		/dev/block/bootdevice/by-name/vendor			flags=backup=0;flashimg;display="Vendor Image"
+/product_image	emmc		/dev/block/bootdevice/by-name/product			flags=backup=0;flashimg;display="Product Image"
+/odm_image		emmc		/dev/block/bootdevice/by-name/odm				flags=backup=0;flashimg;display="ODM Image"
+
 # External Stuff
 /external_sd    vfat    /dev/block/mmcblk0p1 /dev/block/mmcblk0 flags=display="External SDCard";storage;wipeingui;removable;
-/usb-otg        vfat    /dev/block/sdf1 /dev/block/sdf          flags=display="USB OTG";storage;wipeingui;removable;
+/usb-otg        auto    /dev/block/sdf1 /dev/block/sdf          flags=display="USB OTG";storage;wipeingui;removable;
