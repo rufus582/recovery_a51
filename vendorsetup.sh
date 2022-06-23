@@ -39,7 +39,7 @@ export_build_vars(){
 	# Only set this to 1, 2 or 3.
 	# Incase you don't wanna use it,
 	# comment it out or unset it from the env.
-	#export FOX_CUSTOM_BINS_TO_SDCARD=1
+	export FOX_CUSTOM_BINS_TO_SDCARD=1
 
 	### Extra build vars ###
 	export OF_USE_MAGISKBOOT=1
