@@ -53,7 +53,7 @@ export_build_vars(){
 	export OF_USE_SYSTEM_FINGERPRINT=1
 	export OF_USE_TWRP_SAR_DETECT=1
 	export OF_QUICK_BACKUP_LIST="/super;/data;/boot;/vbmeta;/vbmeta_samsung;/dtbo;/efs;/sec_efs;/modem"
-	export FOX_ENABLE_APP_MANAGER=1
+	export FOX_ENABLE_APP_MANAGER=0
 	export OF_STATUS_INDENT_LEFT="48"
 	export OF_STATUS_INDENT_RIGHT="48"
 	export OF_STATUS_H="88"
@@ -84,7 +84,7 @@ export_build_vars(){
 	# R11
 	export FOX_R11=1
 	export FOX_BUILD_TYPE=Stable
-	export FOX_VERSION="10_m31s"
+	export FOX_VERSION="R11.1"
 
 	# maximum permissible splash image size
 	# (in kilobytes); do *NOT* increase!
@@ -106,15 +106,15 @@ set_env_var(){
         echo -e "${RED_BACK}Environment Variable CURR_DEVICE not set... Aborting${RESET}"
         echo "Set to the codename of the device you're building for"
         echo -e "${GREEN}Example :${RESET}"
-        echo " export CURR_DEVICE=a51"
+        echo " export CURR_DEVICE=m31s"
         exit 1
 }
 
 var_not_eq(){
-        echo -e "${RED_BACK}CURR_DEVICE not equal to a51${RESET}"
+        echo -e "${RED_BACK}CURR_DEVICE not equal to m31s${RESET}"
         echo -e "${RED_BACK}CURR_DEVICE = $CURR_DEVICE${RESET}"
         echo -e "${RED}If this is a mistake, then export CURR_DEVICE to the correct codename${RESET}"
-        echo -e "${RED}Skipping a51 specific build vars...${RESET}"
+        echo -e "${RED}Skipping m31s specific build vars...${RESET}"
 }
 
 case "$CURR_DEVICE" in
